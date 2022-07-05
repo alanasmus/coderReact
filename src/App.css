@@ -1,3 +1,75 @@
+.navbar {
+  min-height: 10vh;
+  justify-content: space-between;
+  padding: 0 2rem;
+  background-color: #926BD3;
+  width: 100%;
+}
+
+.navbar__brand {
+  background-color: #E468BD;
+  padding: 0.5rem 1rem;
+  color:  #926BD3;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.5em;
+  height: 80%;
+  width: auto;
+  display: flex;
+  align-items: center;
+}
+
+.navbar__link__list {
+  column-gap: 2.4rem;
+  height: 4.4rem;
+  justify-content: right;
+  width: auto;
+}
+
+.navbar__link__list__a {
+  background-color: #E468BD;
+  padding: 0.5rem 1rem;
+  color:  #926BD3;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid #E468BD;
+  height: 80%;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  transition: .5s ease-out;
+}
+
+.navbar__link__list a:hover {
+  border: 1px solid  #E468BD;
+  background-color: #926BD3;
+  color: #E468BD;
+  padding: 0.5rem 1rem;
+  transition: .5s ease-in;
+}
+
+.navbar__link__list__a__link {
+  background-color: #E468BD;
+  padding: 0.5rem 1rem;
+  color: #926BD3;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: bold;
+  border: 1px solid #E468BD;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .5s ease-out;
+}
+
+header .navbar .navbar__link__list .navbar__link__list__a__link--active {
+  color: #926BD3;
+}
+
+
+/*
 .App {
   text-align: center;
 }
@@ -32,7 +104,9 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+*/
