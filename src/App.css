@@ -7,7 +7,7 @@
 }
 
 .navbar__brand {
-  background-color: #E468BD;
+  background-color: #e287c5;
   padding: 0.5rem 1rem;
   color:  #926BD3;
   text-decoration: none;
@@ -27,12 +27,12 @@
 }
 
 .navbar__link__list__a {
-  background-color: #E468BD;
+  background-color: #e287c5;
   padding: 0.5rem 1rem;
   color:  #926BD3;
   text-decoration: none;
   font-weight: bold;
-  border: 1px solid #E468BD;
+  border: 1px solid #e287c5;
   height: 80%;
   width: 30%;
   display: flex;
@@ -41,21 +41,21 @@
 }
 
 .navbar__link__list a:hover {
-  border: 1px solid  #E468BD;
+  border: 1px solid  #e287c5;
   background-color: #926BD3;
-  color: #E468BD;
+  color: #e287c5;
   padding: 0.5rem 1rem;
   transition: .5s ease-in;
 }
 
 .navbar__link__list__a__link {
-  background-color: #E468BD;
+  background-color: #e287c5;
   padding: 0.5rem 1rem;
   color: #926BD3;
   text-decoration: none;
   font-size: 1.5em;
   font-weight: bold;
-  border: 1px solid #E468BD;
+  border: 1px solid #e287c5;
   height: 100%;
   width: 100%;
   display: flex;
