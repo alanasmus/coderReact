@@ -1,6 +1,8 @@
+import React from 'react';
+
 const ItemListContainer = () => {
     return (
-        "Hola Mundo ItemListContainer!!"
+        "Lista de Productos:"
     );
 }
 
