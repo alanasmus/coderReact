@@ -1,8 +1,11 @@
 import React from 'react';
+import ItemList from './ItemList';
 
 const ItemListContainer = () => {
     return (
-        "Lista de Productos:"
+        <>
+            <ItemList></ItemList>
+        </>
     );
 }
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const ItemCount = (props) => {
-    const [cant, setCant] = useState(0)
+    const [cant, setCant] = useState(props.inicial)
 
     const handleAdd = () => {
         if ((cant + 1) <= props.stock)
@@ -18,6 +18,7 @@ const ItemCount = (props) => {
             <button onClick={handleMinus}>-</button>
             <h3>{cant}</h3>
             <button onClick={handleAdd}>+</button>
+            <button onClick={props.onAdd}>Añadir al carrito</button>
         </div>
     );
 

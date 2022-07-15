@@ -1,7 +1,11 @@
 import React from 'react';
 import ItemCount from './ItemCount';
 
-const Product = (props) => {
+const Item = (props) => {
+    const handleAdd = () => {
+        console.log("Item agregado al carrito")
+    }
+
     return (
         <div className="product-container">
             <div className="product-name">
@@ -10,9 +14,9 @@ const Product = (props) => {
             <div className="product-brand">
                 <h4>Marca: {props.brand}</h4>
             </div>
-            <ItemCount stock={5}/>
+            <ItemCount inicial={0} stock={props.stock} onAdd={handleAdd}/>
         </div>
     );
 }
 
-export default Product;
+export default Item;
