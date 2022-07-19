@@ -68,6 +68,19 @@ header .navbar .navbar__link__list .navbar__link__list__a__link--active {
   color: #926BD3;
 }
 
+.img-container {
+  width: 15rem;
+}
+
+.product-container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: #e287c5;
+  color: #926BD3;
+  padding: 0.5rem 1 rem;
+}
 
 /*
 .App {
