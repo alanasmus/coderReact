@@ -13,7 +13,7 @@ const ItemCount = (props) => {
             setCant(cant - 1)
     }
     return (
-        <div>
+        <div className="itemCount">
             <p>Current stock: {props.stock}</p>
             <button onClick={handleMinus}>-</button>
             <h3>{cant}</h3>
