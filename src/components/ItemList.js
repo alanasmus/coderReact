@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { data } from '../utils/products';
 import Item from './Item';
 
@@ -19,14 +19,17 @@ const cargarData = (data) => {
 const ItemList = () => {
 
     const [dataCargada, setDataCargada] = useState([])
-    cargarData(data).then(datos => { setDataCargada(datos)}).catch(err => { console.log(err) });
+    cargarData(data).then(datos => { setDataCargada(datos) }).catch(err => { console.log(err) });
 
     return (
         <>
             {
                 dataCargada.map((item, index) => {
                     return (
-                        <Item key={index} name={item.name} brand={item.brand} stock={item.stock} />
+                        <>
+                            <Item key={index} name={item.name} brand={item.brand} stock={item.stock} />
+                            <img src={item.img} className="img-container"/>
+                        </>
                     )
                 })
             }
