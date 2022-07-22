@@ -4,7 +4,7 @@ import ItemList from '../components/ItemList';
 const ItemListContainer = () => {
     return (
         <>
-            <ItemList></ItemList>
+        <div className='itemList'><ItemList></ItemList></div>
         </>
     );
 }

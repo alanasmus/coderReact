@@ -1,5 +1,7 @@
 import React from 'react';
 import ItemCount from './ItemCount';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from 'react-router-dom';
 
 const Item = (props) => {
     const handleAdd = () => {
@@ -7,14 +9,17 @@ const Item = (props) => {
     }
 
     return (
-        <div className="product-container">
-            <div className="product-name">
-                <h3>{props.name}</h3>
+        <div className="card product-container">
+            <div className="card-body card-container">
+                <img src={props.img} className="img-container" alt="..."></img>
+                <div className="card-title product-name">
+                    <h3>{props.name}</h3>
+                </div>
+                <div style={{cursor: "pointer"}} className="card-text card-container-link">
+                    <Link to={"/item/${id}"}>Detalles</Link>
+                </div>
+                <ItemCount inicial={0} stock={props.stock} onAdd={handleAdd} />
             </div>
-            <div className="product-brand">
-                <h4>Marca: {props.brand}</h4>
-            </div>
-            <ItemCount inicial={0} stock={props.stock} onAdd={handleAdd}/>
         </div>
     );
 }
