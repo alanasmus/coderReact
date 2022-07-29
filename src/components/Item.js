@@ -25,9 +25,10 @@ const Item = (props) => {
                 </div>
                 {
                     itemCount === 0
-                        ? <ItemCount inicial={itemCount} stock={props.item.stock} onAdd={handleAdd} />
+                        ? <ItemCount inicial={itemCount} stock={props.stock} onAdd={handleAdd} />
                         : <Link to='/Cart' style={{ textDecoration: "none" }}><Button variant="contained">CheckOut</Button></Link>
                 }
+
             </div>
         </div>
     );
