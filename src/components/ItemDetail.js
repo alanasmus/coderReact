@@ -1,10 +1,15 @@
-import react from 'react';
+import { useState } from 'react';
 import ItemCount from './ItemCount';
+import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const ItemDetail = (props) => {
-    const handleAdd = () => {
-        console.log("Item agregado al carrito")
+    const [itemCount, setItemCount] = useState(0);
+
+    const handleAdd = (qty) => {
+        alert(qty + "Item agregado al carrito");
+        setItemCount (qty);
     }
 
     return (
@@ -18,7 +23,11 @@ const ItemDetail = (props) => {
                         <h4 className="card-text product-price">Marca: {props.item.price}</h4>
 
                         <div className="product-count">
-                            <ItemCount inicial={0} stock={props.item.stock} onAdd={handleAdd} />
+                            {
+                                itemCount === 0
+                                    ? <ItemCount inicial={itemCount} stock={props.item.stock} onAdd={handleAdd} />
+                                    : <Link to='/Cart' style={{ textDecoration: "none" }}><Button variant="contained">CheckOut</Button></Link>
+                            }
                         </div>
                     </div>
                 </div>
