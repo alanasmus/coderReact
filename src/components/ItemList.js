@@ -39,7 +39,7 @@ const ItemList = () => {
             dataCargada.map((item, index) => {
                 return (
                     <>
-                        <Item key={index} name={item.name} brand={item.brand} stock={item.stock} img={item.img} />
+                        <Item key={index} name={item.name} brand={item.brand} price={item.price} stock={item.stock} img={item.img} />
 
                     </>
                 )
