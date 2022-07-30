@@ -1,29 +1,37 @@
-import react from 'react';
+import { useState } from 'react';
 import ItemCount from './ItemCount';
+import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const ItemDetail = (props) => {
-    const handleAdd = () => {
-        console.log("Item agregado al carrito")
+    const [itemCount, setItemCount] = useState(0);
+
+    const handleAdd = (qty) => {
+        alert(qty + "Item agregado al carrito");
+        setItemCount (qty);
     }
 
     return (
-        <><div className="product-container">
-            <div className="product-name">
-                <h3>{props.item.name}</h3>
+        <>
+            <div className="product-container">
+                <div className="card product-container">
+                    <img src={props.item.img} className="card-img-top" alt="..."></img>
+                    <div className="card-body card-container-detail">
+                        <h3 className="card-title product-name">{props.item.name}</h3>
+                        <h4 className="card-text product-brand">Marca: {props.item.brand}</h4>
+                        <h4 className="card-text product-price">Marca: {props.item.price}</h4>
+
+                        <div className="product-count">
+                            {
+                                itemCount === 0
+                                    ? <ItemCount inicial={itemCount} stock={props.item.stock} onAdd={handleAdd} />
+                                    : <Link to='/Cart' style={{ textDecoration: "none" }}><Button variant="contained">CheckOut</Button></Link>
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className="product-brand">
-                <h4>Marca: {props.item.brand}</h4>
-            </div>
-            <div className="product-price">
-                <h4>Precio: {props.item.price}</h4>
-            </div>
-            <div className="product-img">
-                <img src={props.item.img}></img>
-            </div>
-            <div className="product-count">
-                <ItemCount inicial={0} stock={props.item.stock} onAdd={handleAdd} />
-            </div>
-        </div>
         </>
     );
 }

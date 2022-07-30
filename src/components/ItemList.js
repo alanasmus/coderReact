@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
 import { data } from '../utils/products';
 import Item from './Item';
 
@@ -19,20 +20,31 @@ const cargarData = (data) => {
 const ItemList = () => {
 
     const [dataCargada, setDataCargada] = useState([])
-    cargarData(data).then(datos => { setDataCargada(datos) }).catch(err => { console.log(err) });
+    const { idCategory } = useParams();
+
+    useEffect(() => {
+        if (idCategory === undefined) {
+            cargarData(data)
+                .then(datos => { setDataCargada(datos) })
+                .catch(err => { console.log(err) });
+        } else {
+            cargarData(data.filter(item => item.categoryId === parseInt(idCategory)))
+                .then(datos => { setDataCargada(datos) })
+                .catch(err => { console.log(err) });
+        }
+    }, [idCategory]);
 
     return (
-        <>
-            {
-                dataCargada.map((item, index) => {
-                    return (
-                        <>
-                            <Item key={index} name={item.name} brand={item.brand} stock={item.stock} />
-                            <img src={item.img} className="img-container"/>
-                        </>
-                    )
-                })
-            }
+        <>{
+            dataCargada.map((item, index) => {
+                return (
+                    <>
+                        <Item key={index} name={item.name} brand={item.brand} stock={item.stock} img={item.img} />
+
+                    </>
+                )
+            })
+        }
         </>
     )
 }
