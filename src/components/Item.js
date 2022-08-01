@@ -16,7 +16,7 @@ const Item = (props) => {
                     <h3>{props.price}</h3>
                 </div>
                 <div style={{ cursor: "pointer" }} className="card-text card-container-link">
-                    <Link to={"/item/${id}"}>Detalles</Link>
+                    <Link to={`/item/${props.id}`}>Detalles</Link>
                 </div>
             </div>
         </div>

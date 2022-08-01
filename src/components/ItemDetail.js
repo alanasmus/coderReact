@@ -12,7 +12,7 @@ const ItemDetail = ({ item }) => {
     const handleAdd = (qty) => {
         alert("Item agregado al carrito");
         setItemCount (qty);
-        test.addToCart(item)
+        test.addToCart(item, qty);
     }
 
     return (
@@ -23,7 +23,7 @@ const ItemDetail = ({ item }) => {
                     <div className="card-body card-container-detail">
                         <h3 className="card-title product-name">{item.name}</h3>
                         <h4 className="card-text product-brand">Marca: {item.brand}</h4>
-                        <h4 className="card-text product-price">Marca: {item.price}</h4>
+                        <h4 className="card-text product-price">Precio: {item.price}</h4>
 
                         <div className="product-count">
                             {
