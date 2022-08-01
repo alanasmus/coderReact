@@ -12,7 +12,7 @@ const ItemDetail = ({ item }) => {
     const handleAdd = (qty) => {
         alert("Item agregado al carrito");
         setItemCount (qty);
-        test.addToCart(item, qty);
+        test.addToCart(item, itemCount);
     }
 
     return (
