@@ -21,7 +21,6 @@ const ItemCount = (props) => {
             <button onClick={props.onAdd}>Añadir al carrito</button>
         </div>
     );
-
 }
 
 export default ItemCount;
